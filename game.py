@@ -2,6 +2,8 @@ from Rooms.room_1 import Room1 as Room_1
 from Rooms.room_2 import Room2 as Room_2
 from Rooms.room_2_side_room import SideRoom as Side_Room
 from Rooms.room_3 import Room3 as Room_3
+from Rooms.room_4 import Room4 as Room_4
+from Rooms.torture_room import TortureRoom as Torture_Room
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
@@ -24,7 +26,11 @@ class Game:
         attacked = Room_2.monster_attacked_checker(self)
         Room_3.__init__(self)
         Room_3.room_3(self)
-
+        Room_4.__init__(self)
+        Room_4.room_4(self)
+        if Room_4.anger_checker(self):
+            Torture_Room.__init__(self)
+            Torture_Room.torture_room_anger(self)
 
 
 

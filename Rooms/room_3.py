@@ -2,14 +2,10 @@ import time
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
-from Rooms.room_1 import Room1 as Room_1
-from Rooms.room_2 import Room2 as Room_2
 from Sound_Files.sounds import _Sounds as Sounds
 
 class Room3:
     def __init__(self):
-        self.weapon = Room_1.weapon_checker(self)
-        self.room_2_secret = Room_2.room_2_secret_checker(self)
         self.baby_key = False
         self.scared = False
 
@@ -34,7 +30,7 @@ class Room3:
                 time.sleep(3)
                 #Add sound of something moving far away
                 response = input("Do you leave to the (Door) or put the key (Back): ")
-                while response.lower() != 'leave' and response.lower() != 'back':
+                while response.lower() != 'door' and response.lower() != 'back':
                     response = print("Please enter either Door or Back: ")
                 if response.lower() == 'back':
                     self.baby_key = False
