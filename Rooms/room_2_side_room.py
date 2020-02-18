@@ -1,15 +1,16 @@
+from Sound_Files.sounds import _Sounds as Sounds
 import time
 import os
-
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
 
 class SideRoom:
     def __init__(self):
         pass
 
     def storage(self):
-        pygame.mixer.Channel(1).play(pygame.mixer.Sound('Door_Closing.wav'))
+        pygame.mixer.Channel(1).play(Sounds.door_closing(self))
         print("You walk into a small room with a few crates and notice blood on the floor")
         time.sleep(2)
         print("Over the speaker you hear: \"Please do ignore the blood and the screams. There are nothing "

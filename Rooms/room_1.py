@@ -1,8 +1,8 @@
+from Sound_Files.sounds import _Sounds as Sounds
+import pygame
 import time
 import os
-
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-import pygame
 
 
 class Room1:
@@ -47,10 +47,10 @@ class Room1:
             response = input("You have opened the chest and found a weapon. There is only the (Door) in front you: ")
         while response != 'Door' and response != 'door':
             response = input("Please enter a valid command of Door: ")
-        pygame.mixer.Channel(1).play(pygame.mixer.Sound('DoorSqueak.wav'))
+        pygame.mixer.Channel(1).play(Sounds.door_squeak(self))
         print("You hear the sound of an old door opening as you turn the knob.")
         time.sleep(5)
-        pygame.mixer.Channel(2).play(pygame.mixer.Sound('Others_Sound.wav'))
+        pygame.mixer.Channel(2).play(Sounds.others_sound(self))
         print("While walking through the door you hear a faint groaning behind you but you know you have to keep moving")
         time.sleep(5)
 
