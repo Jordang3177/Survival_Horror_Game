@@ -1,7 +1,6 @@
 import os
-import pygame
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-
+import pygame
 
 class _Sounds:
     def agony_scream(self):
@@ -21,3 +20,15 @@ class _Sounds:
 
     def others_sound(self):
         return pygame.mixer.Sound('Sound_Files/Others_Sound.wav')
+
+    def side_door_gone(self):
+        return pygame.mixer.Sound('Sound_Files/Side_Door_Gone.wav')
+
+    def others_bite(self):
+        return pygame.mixer.Sound('Sound_Files/Others_Bite.wav')
+
+    def others_breathing(self):
+        return pygame.mixer.Sound('Sound_Files/Others_Breathing.wav')
+
+    def others_laugh(self):
+        return pygame.mixer.Sound('Sound_Files/Others_Laugh.wav')

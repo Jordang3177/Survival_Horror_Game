@@ -1,9 +1,8 @@
 from Sound_Files.sounds import _Sounds as Sounds
-import pygame
 import time
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-
+import pygame
 
 class Room1:
     def __init__(self):
