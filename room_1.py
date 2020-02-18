@@ -9,7 +9,7 @@ class Room1:
     def __init__(self):
         self.room_1_weapon = False
 
-    def start(self):
+    def room_1(self):
         print("Welcome to the Adventure of a Lifetime")
         response = input("If you are ready to play put (Play), if not then say (Help) : ")
         while response.lower() != 'play' and response.lower() != 'help':
@@ -53,4 +53,7 @@ class Room1:
         pygame.mixer.Channel(2).play(pygame.mixer.Sound('Others_Sound.wav'))
         print("While walking through the door you hear a faint groaning behind you but you know you have to keep moving")
         time.sleep(5)
+
+    def weapon_checker(self):
+        return self.room_1_weapon
 
