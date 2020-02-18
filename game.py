@@ -28,9 +28,12 @@ class Game:
         Room_3.room_3(self)
         Room_4.__init__(self)
         Room_4.room_4(self)
+        if Room_4.game_over_checker(self):
+            return
         if Room_4.anger_checker(self):
             Torture_Room.__init__(self)
             Torture_Room.torture_room_anger(self)
+
 
 
 
