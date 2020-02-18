@@ -122,6 +122,8 @@ class Room2:
                             pygame.mixer.Channel(2).play(Sounds.others_laugh(self))
                             print("There is nothing in front of you but the wall")
                             time.sleep(3)
+                            print("There is a small clink sound near you")
+                            time.sleep(3)
                             response = input("Do you (Go) back to the main door: ")
                             while response.lower() != 'go' and response.lower() != 'inspect':
                                 response = input("Please enter Go: ")
