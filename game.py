@@ -3,6 +3,7 @@ from Rooms.room_2 import Room2 as Room_2
 from Rooms.room_2_side_room import SideRoom as Side_Room
 from Rooms.room_3 import Room3 as Room_3
 from Rooms.room_4 import Room4 as Room_4
+from Rooms.room_5 import Room5 as Room_5
 from Rooms.torture_room import TortureRoom as Torture_Room
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
@@ -12,7 +13,7 @@ class Game:
     def play_game(self):
         pygame.mixer.init()
         pygame.mixer.music.load('Sound_Files/Antechamber.wav')
-        pygame.mixer.music.play(1000)
+        pygame.mixer.music.play(-1)
         Room_1.__init__(self)
         Room_1.room_1(self)
         weapon = Room_1.weapon_checker(self)
@@ -28,11 +29,20 @@ class Game:
         Room_3.room_3(self)
         Room_4.__init__(self)
         Room_4.room_4(self)
+        insanity = Room_4.insanity_counter(self)
         if Room_4.game_over_checker(self):
             return
         if Room_4.anger_checker(self):
+            #Add different music to show a different feeling to what is happening now
             Torture_Room.__init__(self)
             Torture_Room.torture_room_anger(self)
+            if Torture_Room.comply_checker(self):
+                Torture_Room.tortue_room_anger_comply(self)
+            else:
+                Torture_Room.torture_room_anger_fight(self)
+        else:
+            Room_5.__init__(self)
+            Room_5.room_5(self)
 
 
 
