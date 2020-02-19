@@ -28,14 +28,14 @@ class Room3:
                 time.sleep(3)
                 print("As you take it you hear a moving sound far away")
                 time.sleep(3)
-                #Add sound of something moving far away
+                pygame.mixer.Channel(2).play(Sounds.far_away_movement(self))
                 response = input("Do you leave to the (Door) or put the key (Back): ")
                 while response.lower() != 'door' and response.lower() != 'back':
                     response = print("Please enter either Door or Back: ")
                 if response.lower() == 'back':
                     self.baby_key = False
                     print("You put the key back where it was and hear the same moving sound as before ")
-                    #Add sound of something moving far away
+                    pygame.mixer.Channel(3).play(Sounds.far_away_movement(self))
                     time.sleep(3)
                     response = 'door'
         if response.lower() == 'door':
@@ -57,8 +57,9 @@ class Room3:
                 return
             if response.lower() == 'fast':
                 self.scared = True
-                print("You open the door as fast as you can and run into the next room terrified: ")
-                #Add Others Laughing
+                print("You open the door as fast as you can and run into the next room terrified.")
+                print("Behind you hearing the laughter of something wicked.")
+                pygame.mixer.Channel(3).play(Sounds.others_laugh(self))
                 pygame.mixer.Channel(2).play(Sounds.door_squeak(self))
                 time.sleep(3)
                 return

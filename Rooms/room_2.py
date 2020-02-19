@@ -108,7 +108,7 @@ class Room2:
                     if weapon:
                         print("You walk up to the pair of eyes and you start to see a set of massive teeth")
                         time.sleep(3)
-                        #pygame.mixer.Channel(1).play(Sounds.others_breathing(self))
+                        pygame.mixer.Channel(1).play(Sounds.others_breathing(self))
                         print("You feel it breathing on you and the stench of something rotten")
                         time.sleep(3)
                         response = input("Do you (Attack) it with your weapon or (Run): ")
@@ -155,7 +155,7 @@ class Room2:
                     else:
                         print("You walk up to the pair of eyes and you start to see a set of massive teeth")
                         time.sleep(3)
-                        #pygame.mixer.Channel(4).play(Sounds.others_breathing(self))
+                        pygame.mixer.Channel(4).play(Sounds.others_breathing(self))
                         print("You feel it breathing on you and the stench of something rotten")
                         time.sleep(3)
                         response = input("Do you (Attack) it with your fists or (Run): ")

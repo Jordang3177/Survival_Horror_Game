@@ -26,23 +26,25 @@ class Room1:
             response = input("Please enter a valid command of (Play): ")
         print(
             "You wake up in a small dark room not remembering how you got here but there is a sharp pain in your head")
-        time.sleep(3)
+        time.sleep(5)
         print(
-            "Before you even begin to orient yourself to the surroundings you hear a large speaker start to turn on and a voice saying ")
-        time.sleep(3)
-        print(
-            "LISTEN FOR I HAVE ONLY TO SAY THIS ONCE. I HAVE CAPTURED YOU AND WANT YOU TO TEST MY FACILITIES. YOU CAN DIE SO BE PREPARED AT EVERY TURN STRANGER!")
-        time.sleep(3)
+            "Before you even begin to orient yourself to the surroundings "
+            "you hear a large speaker start to turn on and a voice saying ")
+        time.sleep(5)
+        print("\"Oh well now you are finally awake. We've been waiting a long time for you. Please hurry along now."
+              " We wouldn't want the fun to start without you now would we?\"")
+        time.sleep(10)
         print("You think you recognize the voice but don't have the time to think about that for now")
-        time.sleep(3)
+        time.sleep(5)
         print("The lights turn on and blind you for a moment. After your eyes adjust you see a chest in front of you.")
-        time.sleep(3)
+        time.sleep(5)
         response = input("Do you (Open) the chest or walk to the (Door): ")
         while response != 'Open' and response != 'open' and response != 'Door' and response != 'door':
             response = input("Please enter a valid command of Open or Door: ")
         if response == "Open" or response == 'open' or response == ' open' or response == ' Open':
             self.room_1_weapon = True
             print("You open the chest and see a small club inside. You take it out and strap it to your belt")
+            time.sleep(5)
             response = input("You have opened the chest and found a weapon. There is only the (Door) in front you: ")
         while response != 'Door' and response != 'door':
             response = input("Please enter a valid command of Door: ")

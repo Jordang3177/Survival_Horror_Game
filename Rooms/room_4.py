@@ -28,7 +28,7 @@ class Room4:
               "the pedestal with the picture on it")
         time.sleep(3)
         print("You hear the rushing of footsteps behind you")
-        #Add movement sounds
+        pygame.mixer.Channel(1).play(Sounds.others_moving(self))
         time.sleep(3)
         print("You look down to the picture and see your husband in a chair with a gag on him")
         time.sleep(3)
@@ -41,10 +41,10 @@ class Room4:
         time.sleep(3)
         pygame.mixer.Channel(2).play(Sounds.evil_laugh(self))
         print("\" We are all ready for you and please mind my pet, he is rather...")
-        time.sleep(3)
+        time.sleep(4)
         print("skittish")
-        time.sleep(3)
         pygame.mixer.Channel(3).play(Sounds.evil_laugh(self))
+        time.sleep(5)
         print("The sounds cut out and you only have the picture in your hand")
         time.sleep(3)
         response = input("Do you (Scream) out at the man, or (Cry) for the pain of what might happen to your husband: ")
@@ -54,9 +54,9 @@ class Room4:
             print('You scream and yell at nothing but the air around you filled with rage')
             time.sleep(3)
             print("in your fit of rage you throw the picture and hear the crack of glass as the picture frame is broken")
-            #Add glass breaking sound
+            pygame.mixer.Channel(2).play(Sounds.glass_breaking(self))
             time.sleep(3)
-            #Add Others Breathing sound
+            pygame.mixer.Channel(3).play(Sounds.others_breathing(self))
             print("Your rage seemed to have brought some other manifestation of evil towards you")
             response = input("Do you keep getting (Angry) or (Calm) down: ")
             while response.lower() != 'angry' and response.lower() != 'calm':
@@ -96,7 +96,7 @@ class Room4:
                     time.sleep(3)
                     print("You are only able to look forward and only see "
                           "a pair of red eyes with a sinister grin staring back at you")
-                    #Add sounds of Others Breathing
+                    pygame.mixer.Channel(3).play(Sounds.others_breathing(self))
                     print("The speakers sound up again")
                     time.sleep(3)
                     print("\"There is nothing to worry about child. Thank you for your anger and I hope we use it well"
@@ -104,7 +104,7 @@ class Room4:
                     time.sleep(5)
                     print("The hold over you breaks but you feel closer to death than you ever have in "
                           "your life and collapse to the floor")
-                    #Add sound of falling over
+                    pygame.mixer.Channel(3).play(Sounds.body_falling(self))
                     time.sleep(5)
                     return
             if response.lower() == 'calm':
@@ -132,9 +132,9 @@ class Room4:
         if response.lower() == 'cry':
             print("You look to the picture of your husband and know the pain that he must be in.")
             time.sleep(7)
-            print("You know that there is little you can do. You feel a wave coming over you that is foreign to you")
+            print("You feel like there is little you can do. You feel a wave coming over you that is foreign to you")
             time.sleep(7)
-            print("You begin to break down and cry, kneeling to the ground, hoping for any repreieve from this moment")
+            print("You begin to break down and cry, kneeling to the ground, hoping for any reprieve from this moment")
             time.sleep(7)
             print("You begin hoping that this must be some sick nightmarish dream or something else")
             time.sleep(7)
@@ -152,41 +152,51 @@ class Room4:
             time.sleep(7)
             print("You have no idea what to do next")
             time.sleep(7)
-            response = input("Do you (Continue) on or (End) it now: ")
-            while response.lower() != 'continue' and response.lower() != 'end':
-                response = input("Please enter either Continue or End: ")
-            if response.lower() == 'end':
+            response = input("Do you (Continue) on or (Succumb) to your emotions:  ")
+            while response.lower() != 'continue' and response.lower() != 'succumb':
+                response = input("Please enter either Continue or Succumb: ")
+            if response.lower() == 'succumb':
                 self.dead = True
-                #Sad music plays
+                pygame.mixer.fadeout(5000)
+                time.sleep(5)
                 print("You take the picture frame that you are holding in your hand and smash it on the ground")
+                pygame.mixer.Channel(3).play(Sounds.glass_breaking(self))
                 time.sleep(7)
                 print("You pick up the broken piece of glass on the ground")
                 time.sleep(7)
+                pygame.mixer.music.load('Sound_Files/Tears_Wont_Stop.wav')
+                pygame.mixer.music.play()
                 print("You think of the great memories you and your husband have shared")
                 time.sleep(7)
-                print("That time you went to Disneyland and just sat down at an ice cream store and watched people go by for hours")
+                print("That time you went to Disneyland and just sat "
+                      "down at an ice cream store and watched people go by for hours")
                 time.sleep(10)
                 print("You hold that memory in your head as you let the glass slide across your arms")
-                time.sleep(10)
+                time.sleep(7)
                 print("Thinking about the Chocolate Chip Mint Cone that you got that day")
-                time.sleep(10)
+                time.sleep(7)
                 print("About the many laughs you shared")
-                time.sleep(10)
+                time.sleep(5)
                 print("You feel the blood running thick onto the floor and feel light headed")
                 time.sleep(10)
                 print("Thinking about the cool feeling of that ice cream on a hot summer's day")
-                time.sleep(10)
+                time.sleep(7)
                 print("The way that your husband and you didn't have "
                       "a care in the world but what was right in front of you")
                 time.sleep(10)
                 print("You fall to the floor barely conscious")
-                time.sleep(10)
-                print("Holding on to those happy moments, looking up at the ceiling and saying sorry that you wern't strong enough"
-                      " knowing your husband would forgive you.")
+                pygame.mixer.Channel(3).play(Sounds.body_falling(self))
+                time.sleep(7)
+                print("Holding on to those happy moments, looking up "
+                      "at the ceiling and saying sorry that you were not strong enough"
+                      " knowing deep in your heart that your husband would forgive you.")
                 time.sleep(15)
                 print("A warmth comes over you and a lightness that feels like you are floating")
                 time.sleep(10)
+                print("Your eyes feel heavy, too heavy to keep open any longer")
+                time.sleep(7)
                 print("You close your eyes, thinking back to that day, and having that memory as your last")
+                pygame.mixer.fadeout(5000)
                 time.sleep(15)
                 return
             if response.lower() == 'continue':
