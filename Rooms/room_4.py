@@ -73,6 +73,7 @@ class Room4:
                     response = input('Please enter Angry or Calm: ')
                 if response.lower() == 'angry':
                     self.anger_break = True
+                    self.insanity += 2
                     print("You get so mad that you can't seem to control yourself and start screaming louder and louder")
                     time.sleep(3)
                     print("You look up at the speakers and scream")
@@ -215,6 +216,9 @@ class Room4:
                 time.sleep(5)
                 return
 
+
+    def insanity_counter(self):
+        return self.insanity
 
     def anger_checker(self):
         return self.anger_break
