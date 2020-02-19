@@ -1,4 +1,5 @@
 import pygame
+import time
 
 class Test:
     def test_sounds(self):
@@ -17,6 +18,10 @@ class Test:
         pygame.mixer.Sound.play(pygame.mixer.Sound('Others_Moving.wav'))
         pygame.mixer.Sound.play(pygame.mixer.Sound('Others_Sound.wav'))
         pygame.mixer.Sound.play(pygame.mixer.Sound('Side_Door_Gone.wav'))
+        pygame.mixer.Sound.play(pygame.mixer.Sound('Metal_Door_Opening.wav'))
+        pygame.mixer.Sound.play(pygame.mixer.Sound('Footsteps_On_Metal.wav'))
+        pygame.mixer.Sound.play(pygame.mixer.Sound('Cutting_Rope.wav'))
+        time.sleep(3)
 
     def mixer(self, file):
         pygame.mixer.music.load(file)

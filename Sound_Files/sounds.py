@@ -44,3 +44,12 @@ class _Sounds:
 
     def far_away_movement(self):
         return pygame.mixer.Sound('Sound_Files/Far_Away_Movement.wav')
+
+    def metal_door_opening(self):
+        return pygame.mixer.Sound('Sound_Files/Metal_Door_Opening.wav')
+
+    def footsteps_on_metal(self):
+        return pygame.mixer.Sound('Sound_Files/Footsteps_On_Metal.wav')
+
+    def cutting_rope(self):
+        return pygame.mixer.Sound('Sound_Files/Cutting_Rope.wav')
