@@ -32,3 +32,15 @@ class _Sounds:
 
     def others_laugh(self):
         return pygame.mixer.Sound('Sound_Files/Others_Laugh.wav')
+
+    def body_falling(self):
+        return pygame.mixer.Sound('Sound_Files/Body_Falling.wav')
+
+    def glass_breaking(self):
+        return pygame.mixer.Sound('Sound_Files/Glass_Breaking.wav')
+
+    def others_moving(self):
+        return pygame.mixer.Sound('Sound_Files/Others_Moving.wav')
+
+    def far_away_movement(self):
+        return pygame.mixer.Sound('Sound_Files/Far_Away_Movement.wav')
