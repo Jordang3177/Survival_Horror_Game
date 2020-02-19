@@ -9,7 +9,6 @@ class Room1:
         self.room_1_weapon = False
 
     def room_1(self):
-        print("Welcome to the Adventure of a Lifetime")
         response = input("If you are ready to play put (Play), if not then say (Help) : ")
         while response.lower() != 'play' and response.lower() != 'help':
             response = input("Please enter a valid command of (Play) or (Help): ")

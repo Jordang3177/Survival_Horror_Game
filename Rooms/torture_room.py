@@ -152,10 +152,79 @@ class TortureRoom:
             return
 
     def tortue_room_anger_comply(self):
-        print("Work In progress")
+        print("You wake up with an extreme pain in your arm")
+        time.sleep(5)
+        print("You nothing but the sound of your own breathing, and realize that you weren't tied up")
+        time.sleep(5)
+        print("You stand up, but almost instantly fall over from lack of balance. "
+              "You aren't used to walking with only one arm")
+        time.sleep(5)
+        response = input("Do you (Go) to the door or (Lay) down: ")
+        while response.lower() != 'go' or response.lower() != 'lay':
+            response = input("Please enter either Go or Lay: ")
+        if response.lower() == 'lay':
+            print("You lay down on the floor and close your eyes")
+            while response.lower() != 'go':
+                time.sleep(5)
+                print("You lay there for awhile thinking and trying to sleep but can't with the pain in your arm")
+                time.sleep(5)
+                response = input("Do you (Go) to the door or continue to (Lay) down: ")
+        if response.lower() == 'go':
+            print("You walk over to the door slowly")
+            time.sleep(5)
+            response = input("Do you (Inspect) the door or (Open) it: ")
+            while response.lower() != 'inspect' and response.lower() != 'open':
+                response = input("Please enter either Inspect or Open: ")
+            if response.lower() == 'inspect':
+                print("The door is an old industrial metal door. With nothing special about it")
+                time.sleep(5)
+                response = input("Do you (Open) the door: ")
+                while response.lower() != 'open':
+                    response = input("Please enter Open: ")
+            if response.lower() == 'open':
+                print("The door doesn't seem to be locked at all and opens after "
+                      "a few moments of struggling to put enough power to open the heavy door")
+                pygame.mixer.Channel(3).play(Sounds.metal_door_opening(self))
+                time.sleep(5)
+                return
+
 
     def torture_room_anger_fight(self):
-        print("Work In progress")
+        print("You wake up with an extreme pain in your arm")
+        time.sleep(5)
+        print("You nothing but the sound of your own breathing, and realize that you weren't tied up")
+        time.sleep(5)
+        print("You stand up, but almost instantly fall over from lack of balance. "
+              "You aren't used to walking with only one arm")
+        time.sleep(5)
+        response = input("Do you (Go) to the door or (Lay) down: ")
+        while response.lower() != 'go' or response.lower() != 'lay':
+            response = input("Please enter either Go or Lay: ")
+        if response.lower() == 'lay':
+            print("You lay down on the floor and close your eyes")
+            while response.lower() != 'go':
+                time.sleep(5)
+                print("You lay there for awhile thinking and trying to sleep but can't with the pain in your arm")
+                time.sleep(5)
+                response = input("Do you (Go) to the door or continue to (Lay) down: ")
+        if response.lower() == 'go':
+            print("You walk over to the door slowly")
+            time.sleep(5)
+            response = input("Do you (Inspect) the door or (Open) it: ")
+            while response.lower() != 'inspect' and response.lower() != 'open':
+                response = input("Please enter either Inspect or Open: ")
+            if response.lower() == 'inspect':
+                print("The door is an old industrial metal door. With nothing special about it")
+                time.sleep(5)
+                response = input("Do you (Open) the door: ")
+                while response.lower() != 'open':
+                    response = input("Please enter Open: ")
+            if response.lower() == 'open':
+                print("The door doesn't seem to be locked at all and opens after "
+                      "a few moments of struggling to put enough power to open the heavy door")
+                pygame.mixer.Channel(3).play(Sounds.metal_door_opening(self))
+                time.sleep(5)
+                return
 
     def insanity_counter(self):
         return self.insanity

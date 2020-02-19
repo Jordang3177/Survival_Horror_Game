@@ -6,6 +6,8 @@ from Rooms.room_4 import Room4 as Room_4
 from Rooms.room_5 import Room5 as Room_5
 from Rooms.torture_room import TortureRoom as Torture_Room
 import os
+import sys
+
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 
@@ -38,8 +40,10 @@ class Game:
             Torture_Room.torture_room_anger(self)
             if Torture_Room.comply_checker(self):
                 Torture_Room.tortue_room_anger_comply(self)
+                #After this will go into small hallway with two doors
             else:
                 Torture_Room.torture_room_anger_fight(self)
+                #After this will go into small hallway with two doors
         else:
             Room_5.__init__(self)
             Room_5.room_5(self)
