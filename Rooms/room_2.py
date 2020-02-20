@@ -124,7 +124,7 @@ class Room2:
                             time.sleep(3)
                             print("There is a small clink sound near you")
                             time.sleep(3)
-                            response = input("Do you (Go) back to the main door: ")
+                            response = input("Do you (Go) back to the main door or (Inspect) the noise: ")
                             while response.lower() != 'go' and response.lower() != 'inspect':
                                 response = input("Please enter Go: ")
                             if response.lower() == 'inspect':

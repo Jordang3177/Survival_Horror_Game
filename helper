@@ -1,0 +1,35 @@
+Room 1:
+Has a club that can be found in the chest
+
+Room 2:
+Has a side Room
+    Room 2 Side Room:
+    In the side room has markings on the wall
+    Some crates with nothing in it
+    Makes a click that makes the monster come to the player when they leave
+if went to side room can attack the monster
+if has club and attacked monster can pick up tooth
+
+Room 3:
+Has a statue in it with a key on it that has a clock on it
+Taking the key moves a door somewhere else in the facility
+Door has a pig insignia on it
+
+Room 4:
+This is a story driven room
+
+Room 5:
+This has a broken piano in it
+Room on the right hand side has a door with a spider on it
+Room on the top side has a regular door
+
+Room 6:
+A hallway with only one door in the end of the hallway
+
+Room 7:
+A hallway with two doors, both leading to bedrooms
+    Room 7 Bed 1:
+    A bed room
+    Room 7 Bed 2:
+    A bed room
+
