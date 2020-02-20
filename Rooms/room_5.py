@@ -5,8 +5,9 @@ import pygame
 from Sound_Files.sounds import _Sounds as Sounds
 
 class Room5:
-    def __init__(selfs):
-        pass
+    def __init__(self):
+        self.left_room = False
+        self.right_room = False
 
     def room_5(self):
         pygame.mixer.Channel(4).play(Sounds.door_closing(self))
@@ -32,28 +33,53 @@ class Room5:
                 while response.lower() != 'doors':
                     response = input("Please enter Doors: ")
         if response.lower() == 'doors':
-            print("You walk over to the corner of the room where both doors are.")
-            time.sleep(5)
-            print("The door on your left is the one directly across from where you came in from.")
-            time.sleep(5)
-            print("The door on your right is the one directly across from the piano")
-            time.sleep(5)
-            response = input("Do you go to the (Left) door or the (Right) door: ")
-            while response.lower() != 'left' and response.lower() != 'right':
-                response = input("Please enter either Left or Right: ")
-            if response.lower() == 'left':
-                print("You walk over to the left door")
-                response = input("Do you (Inspect) the door, (Open) the door, or go to the (Right) door: ")
-                while response.lower() != 'inspect' and response.lower() != 'open' and response.lower() != 'right':
-                    response = input("Please enter Inspect, Open, or Right: ")
-                if response.lower() == 'inspect':
-                    print("You look at the door and notice nothing of importance to it.")
-                    response = input("Do you (Open) the door or go to the (Other) door: ")
-                    while response.lower() != 'open':
-                        response = input("Please enter Open or Other: ")
+            while response.lower() == 'doors':
+                print("You walk over to the corner of the room where both doors are.")
+                time.sleep(5)
+                print("The door on your left is the one directly across from where you came in from.")
+                time.sleep(5)
+                print("The door on your right is the one directly across from the piano")
+                time.sleep(5)
+                response = input("Do you go to the (Left) door or the (Right) door: ")
+                while response.lower() != 'left' and response.lower() != 'right':
+                    response = input("Please enter either Left or Right: ")
+                if response.lower() == 'left':
+                    print("You walk over to the left door")
+                    time.sleep(5)
+                    response = input("Do you (Inspect) the door, (Open) "
+                                     "the door, or go (Back) to the middle of the room: ")
+                    while response.lower() != 'inspect' and response.lower() != 'open' and response.lower() != 'right':
+                        response = input("Please enter Inspect, Open, or Back: ")
+                    if response.lower() == 'inspect':
+                        print("You look at the door and notice nothing of importance to it.")
+                        time.sleep(5)
+                        response = input("Do you (Open) the door or go (Back) to the middle of the room: ")
+                        while response.lower() != 'open':
+                            response = input("Please enter Open or Other: ")
                     if response.lower() == 'open':
+                        self.left_room = True
+                        pygame.mixer.Channel(5).play(Sounds.door_squeak(self))
                         print("You open the door and continue into the next room")
-                    if response.lower() == 'other':
-                        response = 'right'
-            if response.lower() == 'right':
-                print('Work in progress')
+                        time.sleep(5)
+                    if response.lower() == 'back':
+                        response = 'doors'
+                if response.lower() == 'right':
+                    print('You walk over to the door on the right hand side')
+                    time.sleep(5)
+                    response = input("Do you (Inspect) the door, (Open) "
+                                     "the door or go (Back) to the middle of the room: ")
+                    while response.lower() != 'inspect' and response.lower() != 'open' and response.lower() != 'back':
+                        response = input("Please enter either Inspect, Open, or Back")
+                    if response.lower() == 'inspect':
+                        print("You look at the top of the door and see a spider sprawled across it")
+                        time.sleep(5)
+                        response = input("Do you (Open) the door or go (Back) to the middle of the room: ")
+                        while response.lower() != 'open' and response.lower() != 'back':
+                            response = input("Please enter either Open or Back: ")
+                    if response.lower() == 'open':
+                        self.right_room = True
+                        print("You open the door and continue into the next room")
+                        pygame.mixer.Channel(5).play(Sounds.door_squeak(self))
+                        time.sleep(5)
+                    if response.lower() == 'back':
+                        response = 'doors'
