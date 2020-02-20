@@ -1,3 +1,45 @@
+Possible Endings:
+    Path 1: You go through to room 4 and choose to end it there
+    Path 2:
+    Path 3:
+    Path 4:
+    Path 5:
+    Path 6:
+    Path 7:
+    Path 8:
+    Path 9:
+    Path 10:
+    Path 11:
+    Path 12:
+    Path 13:
+    Path 14:
+    Path 15:
+    Path 16:
+    Path 17:
+    Path 18:
+    Path 19:
+    Path 20:
+    Path 21:
+    Path 22:
+    Path 23:
+    Path 24:
+    Path 25:
+    Path 26:
+    Path 27:
+    Path 28:
+    Path 29:
+    Path 30:
+
+Variables so far that will have an impact on the game:
+    Insanity: This will be used for different endings to the game based on how much you have and where you end at
+    Weapon: From the weapon found in Room 1
+    Monster Attacked in Room 2: This is from attacking the monster either with or without the weapon in Room 2 after going into the side room
+    Baby Key: This is from grabbing the key in Room 3
+    Scared: This is from running away fast from the monster from Room 3 to Room 4
+    Anger Break: This is from getting really angry in Room 4 and will cause a break from the main story to a new path
+
+
+
 Room 1:
 Has a club that can be found in the chest
 
