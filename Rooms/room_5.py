@@ -83,3 +83,10 @@ class Room5:
                         time.sleep(5)
                     if response.lower() == 'back':
                         response = 'doors'
+
+
+    def left_room_checker(self):
+        return self.left_room
+
+    def right_room_checker(self):
+        return self.right_room

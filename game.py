@@ -38,6 +38,7 @@ class Game:
             #Add different music to show a different feeling to what is happening now
             Torture_Room.__init__(self)
             Torture_Room.torture_room_anger(self)
+            insanity = Torture_Room.insanity_counter(self)
             if Torture_Room.comply_checker(self):
                 Torture_Room.tortue_room_anger_comply(self)
                 #After this will go into small hallway with two doors
@@ -47,6 +48,10 @@ class Game:
         else:
             Room_5.__init__(self)
             Room_5.room_5(self)
+            if Room_5.left_room_checker(self):
+                print("Work in Progress")
+            if Room_5.right_room_checker(self):
+                print("Work in Progress")
 
 
 
