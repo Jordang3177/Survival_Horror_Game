@@ -4,6 +4,7 @@ from Rooms.room_2_side_room import SideRoom as Side_Room
 from Rooms.room_3 import Room3 as Room_3
 from Rooms.room_4 import Room4 as Room_4
 from Rooms.room_5 import Room5 as Room_5
+from Rooms.room_6 import Room6 as Room_6
 from Rooms.torture_room import TortureRoom as Torture_Room
 import os
 import sys
@@ -49,7 +50,8 @@ class Game:
             Room_5.__init__(self)
             Room_5.room_5(self)
             if Room_5.left_room_checker(self):
-                print("Work in Progress")
+                Room_6.__init__(self)
+                Room_6.room_6(self)
             if Room_5.right_room_checker(self):
                 print("Work in Progress")
 

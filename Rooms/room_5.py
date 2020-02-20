@@ -23,7 +23,7 @@ class Room5:
             if response.lower() == 'inspect':
                 print("You look at the piano and notice through the top of it that all the strings are broken: ")
                 time.sleep(5)
-                repsonse = ("Do you (Play) the piano or go to the (Doors): ")
+                response = input("Do you (Play) the piano or go to the (Doors): ")
                 while response.lower() != 'play' and response.lower() != 'doors':
                     response = input("Please enter either Play or Doors: ")
             if response.lower() == 'play':
@@ -61,6 +61,7 @@ class Room5:
                         pygame.mixer.Channel(5).play(Sounds.door_squeak(self))
                         print("You open the door and continue into the next room")
                         time.sleep(5)
+                        return
                     if response.lower() == 'back':
                         response = 'doors'
                 if response.lower() == 'right':
@@ -81,6 +82,7 @@ class Room5:
                         print("You open the door and continue into the next room")
                         pygame.mixer.Channel(5).play(Sounds.door_squeak(self))
                         time.sleep(5)
+                        return
                     if response.lower() == 'back':
                         response = 'doors'
 
